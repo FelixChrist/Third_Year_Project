@@ -5,9 +5,9 @@ The interrupt should be connected to pin 10 and the LED connected to pin 13.
  */
 
 byte ledPin = 13;
-byte interruptPin = 10;
+byte interruptPin = 9;
 //Set the state of the output, this is volatile so it can change in interrupts
-volatile byte state = LOW;
+volatile byte state = HIGH;
 void setup() {
   //Set the pin modes
   pinMode(ledPin, OUTPUT);
