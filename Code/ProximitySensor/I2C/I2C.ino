@@ -9,15 +9,14 @@ void setup() {
   // put your setup code here, to run once:
   Wire.begin();
   Serial.begin(9600); 
-  Serial.print("Initialising...\n");
+  Serial.println("Initialising MTCH112...");
   WriteRegister(0x07,150);
-  Serial.print("Prox threshold: ");
+  Serial.println("Prox threshold: ");
   ReadRegister(0x07);
-  Serial.print("Timeout high: ");
+  Serial.println("Timeout high: ");
   ReadRegister(0x0A);
-  Serial.print("Timeout low: ");
+  Serial.println("Timeout low: ");
   ReadRegister(0x09);
-  Serial.print("\n\n\n");
 
 }
 
@@ -38,6 +37,7 @@ void loop() {
     distance |= Wire.read();
     //print the distance
     Serial.print(distance);
+    //Serial.println("Here");
             // print the byte
   }
   Serial.print("\n");
